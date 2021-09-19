@@ -16,7 +16,7 @@ export type FirebaseFunctionsCallable = TriggerAnnotated
     & Runnable<any>;
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-export {SomeJTDSchemaType} from "ajv/dist/types/jtd-schema";
+export {SomeJTDSchemaType, JTDDataType} from "ajv/dist/types/jtd-schema";
 
 export interface FunctionsBuilderParams {
     defaultRegions: FirebaseFunctionsRegions;
