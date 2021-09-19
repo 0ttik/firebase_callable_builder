@@ -1,5 +1,5 @@
 {
-  "name": "firebase_callable_builder",
+  "name": "firebase-callable-builder",
   "version": "0.0.1",
   "description": "Firebase callable builder class with ajv validation",
   "main": "index.js",
