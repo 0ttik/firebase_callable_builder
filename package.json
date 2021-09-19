@@ -1,0 +1,25 @@
+{
+  "name": "firebase_callable_builder",
+  "version": "0.0.1",
+  "description": "Firebase callable builder class with ajv validation",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/0ttik/firebase_callable_builder.git"
+  },
+  "keywords": [
+    "firebase"
+  ],
+  "author": "Georgii Kostenko",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.6.3",
+    "firebase-functions": "^3.15.6",
+    "@types/express": "^4.17.13"
+  }
+}
