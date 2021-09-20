@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import {region, Runnable, SUPPORTED_REGIONS, TriggerAnnotated} from "firebase-functions/lib";
+import {region, Runnable, SUPPORTED_REGIONS, TriggerAnnotated} from "firebase-functions";
 import {JTDSchemaType, SomeJTDSchemaType} from "ajv/dist/types/jtd-schema";
 import {CallableContext, HttpsError} from "firebase-functions/lib/common/providers/https";
 import Ajv, {AsyncValidateFunction, ValidateFunction} from "ajv/dist/jtd";
