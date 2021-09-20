@@ -4,13 +4,13 @@ import {region, Runnable, SUPPORTED_REGIONS, TriggerAnnotated} from "firebase-fu
 import {JTDSchemaType, SomeJTDSchemaType} from "ajv/dist/types/jtd-schema";
 import {CallableContext, HttpsError} from "firebase-functions/lib/common/providers/https";
 import Ajv, {AsyncValidateFunction, ValidateFunction} from "ajv/dist/jtd";
-import express from "firebase-functions/node_modules/@types/express";
 import {ParamsDictionary} from 'express-serve-static-core';
+import {Request, Response} from "express/ts4.0";
 
 /* reason: this types are from firebase functions library so it's just a copy of their types */
 export type FirebaseFunctionsRegions = Array<typeof SUPPORTED_REGIONS[number] | string>;
 export type FirebaseFunctionsCallableExpress =
-    ((req: express.Request<ParamsDictionary>, resp: express.Response<any>) => void | Promise<void>);
+    ((req: Request<ParamsDictionary>, resp: Response<any>) => void | Promise<void>);
 export type FirebaseFunctionsCallable = TriggerAnnotated
     & FirebaseFunctionsCallableExpress
     & Runnable<any>;
