@@ -2,7 +2,7 @@
 
 import {region, Runnable, SUPPORTED_REGIONS, TriggerAnnotated} from "firebase-functions";
 import {JTDSchemaType, SomeJTDSchemaType} from "ajv/dist/types/jtd-schema";
-import {CallableContext, HttpsError} from "firebase-functions/lib/common/providers/https";
+import {CallableContext, HttpsError} from "firebase-functions/lib/providers/https";
 import Ajv, {AsyncValidateFunction, ValidateFunction} from "ajv/dist/jtd";
 import {ParamsDictionary} from 'express-serve-static-core';
 import {Request, Response} from "express/ts4.0";
