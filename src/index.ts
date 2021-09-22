@@ -6,6 +6,7 @@ import {CallableContext, HttpsError} from "firebase-functions/lib/providers/http
 import Ajv, {AsyncValidateFunction, ValidateFunction} from "ajv/dist/jtd";
 import {ParamsDictionary} from 'express-serve-static-core';
 import {Request, Response} from "express/ts4.0";
+import {Guard} from "./guard";
 
 /* reason: this types are from firebase functions library so it's just a copy of their types */
 export type FirebaseFunctionsRegions = Array<typeof SUPPORTED_REGIONS[number] | string>;
@@ -18,8 +19,11 @@ export type FirebaseFunctionsCallable = TriggerAnnotated
 
 export {SomeJTDSchemaType, JTDDataType} from "ajv/dist/types/jtd-schema";
 
+export {Guard} from "./guard";
+
 export interface FunctionsBuilderParams {
     defaultRegions: FirebaseFunctionsRegions;
+    guards: Guard[];
     /**
      * Initial schemas which are going to be precompiled and available by name.
      * In format <name>:<schema>
@@ -135,6 +139,9 @@ export class FunctionsBuilder {
                             details: validate.errors,
                         }
                     );
+                }
+                for (const guard of this.params.guards) {
+                    await guard.handle(data, extendedContext);
                 }
                 return handler(data, extendedContext);
             });

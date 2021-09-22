@@ -4,6 +4,7 @@
 * Type safety
 * Region selection
 * Flexible settings copy
+* Guards
 
 # Usage example
 
@@ -11,7 +12,8 @@
 
 FunctionsBuilder.init({
     defaultRegions: ['europe-west3'],
-    schemas: {registerUserSchema}
+    schemas: {registerUserSchema},
+    guards: [AuthGuard()],
 });
 
 const registerUserSchema = {
